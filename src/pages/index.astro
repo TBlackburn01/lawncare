@@ -1,25 +1,173 @@
 ---
-import '../styles/global.css';
 // Component Imports
-import Button from '../components/Button.astro';
+import MainLayout from '../layouts/main.astro';
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+const pageTitle = "Best Lawn Care - Professional Lawn Services in Your Area";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
-	</head>
-
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
+<MainLayout content={{ title: pageTitle }}>
+	<!-- Hero Section -->
+	<section class="relative bg-gray-50">
+		<div class="aspect-[16/9] w-full">
+			<img
+				src="/wide.webp"
+				alt="Beautiful green lawn with professional mowing service"
+				class="w-full h-full object-cover"
+			/>
+			<div class="absolute inset-0 bg-black/50"></div>
+			<div class="absolute inset-0 flex items-center justify-center">
+				<div class="text-center text-white max-w-4xl mx-auto px-4">
+					<h1 class="text-4xl md:text-6xl font-bold mb-6">
+						Lawn Care Services
+					</h1>
+					<p class="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
+						Transform your outdoor space with expert landscape and lawn care services. Our team of dedicated professionals will provide meticulous attention to detail to ensure your property is maintained to the highest standards.
+					</p>
+					<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+						<a
+							href="tel:6163714651"
+							class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white disabled:opacity-50 disabled:pointer-events-none ring-offset-background btn-primary text-white hover:scale-105 h-12 px-8 py-3 text-lg"
+						>
+							<svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+							</svg>
+							Get a Free Estimate
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
-	</body>
-</html>
+	</section>
+
+	<!-- Services Overview -->
+	<section class="py-16 bg-muted/50">
+		<div class="container mx-auto px-4">
+			<div class="text-center mb-12">
+				<h2 class="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+				<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+					We provide comprehensive lawn care solutions to keep your property looking its best year-round.
+				</p>
+			</div>
+
+			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<div class="bg-background rounded-lg p-6 shadow-sm border card-hover">
+					<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+						<img src="/360_F_892799299_9vorYjo67KfCpq2hcc6AjZjMo2lYFlgQ.webp" alt="Lawn Mower" class="w-8 h-8" />
+					</div>
+					<h3 class="text-xl font-semibold mb-3">Lawn Mowing</h3>
+					<p class="text-muted-foreground mb-4">
+						Professional mowing services with precision cutting and edging for a manicured look.
+					</p>
+					<a href="/lawn-mowing" class="text-primary hover:underline font-medium">Learn More →</a>
+				</div>
+
+				<div class="bg-background rounded-lg p-6 shadow-sm border card-hover">
+					<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+						<img src="/360_F_1558613182_00BMPcg5HipVvhgLdQ9urARNl3huKHrF.webp" alt="Fertilizer" class="w-8 h-8" />
+					</div>
+					<h3 class="text-xl font-semibold mb-3">Fertilization</h3>
+					<p class="text-muted-foreground mb-4">
+						Custom fertilizer programs to promote healthy growth and vibrant green lawns.
+					</p>
+					<a href="/fertilizer" class="text-primary hover:underline font-medium">Learn More →</a>
+				</div>
+
+				<div class="bg-background rounded-lg p-6 shadow-sm border card-hover">
+					<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+						<img src="/360_F_1323945471_ccNBpnR4tQkfpmXRJQnY8OtfvwHRPZA1.webp" alt="Lawn Care" class="w-8 h-8" />
+					</div>
+					<h3 class="text-xl font-semibold mb-3">Maintenance</h3>
+					<p class="text-muted-foreground mb-4">
+						Complete lawn maintenance including aeration, weed control, and seasonal cleanups.
+					</p>
+					<a href="/lawn-mowing" class="text-primary hover:underline font-medium">Learn More →</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose Us -->
+	<section class="py-16">
+		<div class="container mx-auto px-4">
+			<div class="grid lg:grid-cols-2 gap-12 items-center">
+				<div>
+					<h2 class="text-3xl md:text-4xl font-bold mb-6">Why Choose Best Lawn Care?</h2>
+					<div class="space-y-6">
+						<div class="flex items-start gap-4">
+							<div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+								<svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+								</svg>
+							</div>
+							<div>
+								<h3 class="font-semibold mb-2">Experienced Professionals</h3>
+								<p class="text-muted-foreground">Our team has years of experience in lawn care and landscaping, ensuring quality results every time.</p>
+							</div>
+						</div>
+
+						<div class="flex items-start gap-4">
+							<div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+								<svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+								</svg>
+							</div>
+							<div>
+								<h3 class="font-semibold mb-2">Reliable Service</h3>
+								<p class="text-muted-foreground">We show up on time and complete the job efficiently, so you can count on us for consistent service.</p>
+							</div>
+						</div>
+
+						<div class="flex items-start gap-4">
+							<div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+								<svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+								</svg>
+							</div>
+							<div>
+								<h3 class="font-semibold mb-2">Affordable Pricing</h3>
+								<p class="text-muted-foreground">Competitive rates without compromising on quality. Get the best value for your lawn care investment.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="relative">
+					<div class="aspect-square rounded-lg overflow-hidden">
+						<img
+							src="/360_F_892799299_9vorYjo67KfCpq2hcc6AjZjMo2lYFlgQ.webp"
+							alt="Professional lawn care equipment"
+							class="w-full h-full object-cover"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Call to Action -->
+	<section class="py-16 bg-primary text-primary-foreground">
+		<div class="container mx-auto px-4 text-center">
+			<h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
+			<p class="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
+				Contact us today for a free consultation and quote. We're here to help you achieve the lawn of your dreams.
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<a
+					href="tel:6163714651"
+					class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-white text-primary hover:bg-white/90 hover:scale-105 h-11 px-8 py-6 text-lg border-2 border-white/30"
+				>
+					<svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+						<path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+					</svg>
+					Call: (616) 371-4651
+				</a>
+				<a
+					href="/lawn-mowing"
+					class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white disabled:opacity-50 disabled:pointer-events-none ring-offset-background border-2 border-white/30 text-white hover:bg-white hover:text-primary hover:scale-105 h-11 px-8 py-6 text-lg"
+				>
+					View Our Services
+				</a>
+			</div>
+		</div>
+	</section>
+</MainLayout>

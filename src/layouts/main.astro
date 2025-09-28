@@ -8,9 +8,129 @@ const { content } = Astro.props;
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{content.title}</title>
+		<title>{content.title || "Best Lawn Care - Professional Lawn Services"}</title>
+		<meta name="description" content="Professional lawn care services including mowing, fertilization, and maintenance. Serving your area with quality, reliable service." />
 	</head>
-	<body>
-		<slot />
+	<body class="min-h-screen bg-background font-sans antialiased">
+		<header class="sticky top-0 z-50 w-full">
+			<!-- Top bar with phone and CTA -->
+			<div class="header-top-bar text-white py-2">
+				<div class="container mx-auto px-4">
+					<div class="flex justify-between items-center text-sm">
+						<div class="hidden md:block">
+							<span>For the best in Residential & Commercial Lawn Care </span>
+							<a href="/contact" class="underline hover:no-underline">Schedule a Consultation</a>
+						</div>
+						<div class="flex items-center space-x-2">
+							<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+							</svg>
+							<a href="tel:6163714651" class="hover:underline">(616) 371-4651</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Main navigation -->
+			<div class="bg-white shadow-md">
+				<div class="container mx-auto px-4">
+					<div class="flex h-16 items-center justify-between">
+						<div class="flex items-center">
+							<a class="flex items-center space-x-3" href="/">
+								<div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+									<svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+										<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+									</svg>
+								</div>
+								<div class="text-xl font-bold text-gray-800">
+									<span class="text-primary">BEST</span>
+									<span class="text-gray-600">LAWN</span>
+									<br>
+									<span class="text-primary">CARE</span>
+								</div>
+							</a>
+						</div>
+
+						<nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+							<a href="/" class="text-gray-700 hover:text-primary transition-colors">HOME</a>
+							<a href="/lawn-mowing" class="text-gray-700 hover:text-primary transition-colors">LAWN MOWING</a>
+							<a href="/fertilizer" class="text-gray-700 hover:text-primary transition-colors">FERTILIZER</a>
+							<a href="/contact" class="text-gray-700 hover:text-primary transition-colors">CONTACT</a>
+						</nav>
+
+						<button class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500">
+							<svg stroke-width="1.5" class="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor" fill="none">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+							</svg>
+							<span class="sr-only">Toggle Menu</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="flex-1">
+			<slot />
+		</main>
+		<footer class="bg-gray-800 text-white py-8 md:py-12">
+			<div class="container mx-auto px-4">
+				<div class="grid md:grid-cols-4 gap-8 mb-8">
+					<div class="md:col-span-2">
+						<div class="flex items-center space-x-3 mb-4">
+							<div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+								<svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+								</svg>
+							</div>
+							<h3 class="text-xl font-bold text-white">Best Lawn Care</h3>
+						</div>
+						<p class="text-white/80 mb-4 max-w-md">
+							Professional lawn care services with a commitment to quality, reliability, and customer satisfaction. Transform your lawn into a beautiful, healthy outdoor space.
+						</p>
+						<div class="flex items-center space-x-4">
+							<a href="tel:6163714651" class="inline-flex items-center space-x-2 bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-md transition-all hover:scale-105">
+								<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+								</svg>
+								<span>(616) 371-4651</span>
+							</a>
+						</div>
+					</div>
+
+					<div>
+						<h4 class="text-lg font-semibold text-white mb-4">Services</h4>
+						<ul class="space-y-2">
+							<li><a href="/lawn-mowing" class="text-white/80 hover:text-white transition-colors">Lawn Mowing</a></li>
+							<li><a href="/fertilizer" class="text-white/80 hover:text-white transition-colors">Fertilizer Services</a></li>
+							<li><a href="/lawn-mowing" class="text-white/80 hover:text-white transition-colors">Lawn Maintenance</a></li>
+						</ul>
+					</div>
+
+					<div>
+						<h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+						<ul class="space-y-2">
+							<li><a href="/" class="text-white/80 hover:text-white transition-colors">Home</a></li>
+							<li><a href="/about" class="text-white/80 hover:text-white transition-colors">About Us</a></li>
+							<li><a href="/contact" class="text-white/80 hover:text-white transition-colors">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="border-t border-white/20 pt-6">
+					<div class="flex flex-col md:flex-row justify-between items-center gap-4">
+						<p class="text-center text-sm text-white/80 md:text-left">
+							&copy; 2025 Best Lawn Care. All rights reserved.
+						</p>
+						<div class="flex items-center gap-6">
+							<a href="/privacy" class="text-sm text-white/80 hover:text-white transition-colors">
+								Privacy Policy
+							</a>
+							<a href="/terms" class="text-sm text-white/80 hover:text-white transition-colors">
+								Terms of Service
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
 	</body>
 </html>

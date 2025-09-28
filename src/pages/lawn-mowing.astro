@@ -1,0 +1,301 @@
+---
+// Component Imports
+import MainLayout from '../layouts/main.astro';
+
+const pageTitle = "Professional Lawn Mowing Services | Best Lawn Care";
+---
+
+<MainLayout content={{ title: pageTitle }}>
+	<!-- Hero Section -->
+	<section class="relative">
+		<div class="aspect-[16/9] w-full">
+			<img
+				src="/360_F_892799299_9vorYjo67KfCpq2hcc6AjZjMo2lYFlgQ.webp"
+				alt="Professional lawn mowing service in action"
+				class="w-full h-full object-cover"
+			/>
+			<div class="absolute inset-0 bg-black/40"></div>
+			<div class="absolute inset-0 flex items-center justify-center">
+				<div class="text-center text-white max-w-4xl mx-auto px-4">
+					<h1 class="text-4xl md:text-6xl font-bold mb-6">
+						Professional Lawn Mowing Services
+					</h1>
+					<p class="text-xl md:text-2xl mb-8 opacity-90">
+						Expert mowing, edging, and lawn maintenance for a perfectly manicured yard
+					</p>
+					<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+						<a
+							href="tel:6163714651"
+							class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 py-6 text-lg"
+						>
+							Call Now: (616) 371-4651
+						</a>
+						<a
+							href="/#services"
+							class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input hover:bg-accent hover:text-accent-foreground h-11 px-8 py-6 text-lg"
+						>
+							Get Quote
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Service Details -->
+	<section class="py-16">
+		<div class="container mx-auto px-4">
+			<div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+				<div>
+					<h2 class="text-3xl md:text-4xl font-bold mb-6">Complete Lawn Mowing Solutions</h2>
+					<p class="text-lg text-muted-foreground mb-6">
+						Our professional lawn mowing service goes beyond just cutting grass. We provide comprehensive lawn care that ensures your yard looks its absolute best throughout the growing season.
+					</p>
+
+					<div class="space-y-4">
+						<div class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-primary mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+							<div>
+								<h3 class="font-semibold mb-1">Precision Cutting</h3>
+								<p class="text-muted-foreground">Professional mowing at the optimal height for your grass type and local climate conditions.</p>
+							</div>
+						</div>
+
+						<div class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-primary mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+							<div>
+								<h3 class="font-semibold mb-1">Clean Edging</h3>
+								<p class="text-muted-foreground">Crisp, clean edges along walkways, driveways, and landscape borders for a polished look.</p>
+							</div>
+						</div>
+
+						<div class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-primary mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+							<div>
+								<h3 class="font-semibold mb-1">Debris Cleanup</h3>
+								<p class="text-muted-foreground">Thorough cleanup of grass clippings and debris, leaving your lawn neat and tidy.</p>
+							</div>
+						</div>
+
+						<div class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-primary mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+							<div>
+								<h3 class="font-semibold mb-1">Regular Scheduling</h3>
+								<p class="text-muted-foreground">Consistent service schedules to maintain your lawn's health and appearance year-round.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="relative">
+					<div class="aspect-[4/3] rounded-lg overflow-hidden">
+						<img
+							src="/360_F_1323945471_ccNBpnR4tQkfpmXRJQnY8OtfvwHRPZA1.webp"
+							alt="Professional lawn mowing equipment and service"
+							class="w-full h-full object-cover"
+						/>
+					</div>
+				</div>
+			</div>
+
+			<!-- Benefits Section -->
+			<div class="bg-muted/50 rounded-lg p-8 md:p-12">
+				<h2 class="text-3xl font-bold text-center mb-8">Benefits of Professional Lawn Mowing</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<div class="text-center">
+						<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+							<svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+							</svg>
+						</div>
+						<h3 class="font-semibold mb-3">Saves Time</h3>
+						<p class="text-muted-foreground">Free up your weekends and evenings for what matters most to you and your family.</p>
+					</div>
+
+					<div class="text-center">
+						<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+							<svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+						</div>
+						<h3 class="font-semibold mb-3">Professional Results</h3>
+						<p class="text-muted-foreground">Get that professional, manicured look that enhances your property's curb appeal.</p>
+					</div>
+
+					<div class="text-center">
+						<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+							<svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+							</svg>
+						</div>
+						<h3 class="font-semibold mb-3">Healthy Lawn</h3>
+						<p class="text-muted-foreground">Proper mowing techniques promote healthy grass growth and help prevent disease and pests.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Pricing Section -->
+	<section class="py-16 bg-muted/30">
+		<div class="container mx-auto px-4">
+			<div class="text-center mb-12">
+				<h2 class="text-3xl md:text-4xl font-bold mb-4">Service Packages</h2>
+				<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+					Choose from our flexible service packages designed to meet your lawn care needs and budget.
+				</p>
+			</div>
+
+			<div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+				<div class="bg-background rounded-lg p-8 shadow-sm border">
+					<div class="text-center mb-6">
+						<h3 class="text-2xl font-bold mb-2">Basic</h3>
+						<div class="text-3xl font-bold text-primary mb-2">$35<span class="text-lg text-muted-foreground">/visit</span></div>
+						<p class="text-muted-foreground">Perfect for smaller lawns</p>
+					</div>
+					<ul class="space-y-3 mb-6">
+						<li class="flex items-center gap-3">
+							<svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+							<span>Professional mowing</span>
+						</li>
+						<li class="flex items-center gap-3">
+							<svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+							<span>Basic edging</span>
+						</li>
+						<li class="flex items-center gap-3">
+							<svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+							<span>Clipping cleanup</span>
+						</li>
+					</ul>
+					<a
+						href="tel:6163714651"
+						class="w-full inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-primary text-primary-foreground hover:bg-primary/90 h-11"
+					>
+						Call for Quote
+					</a>
+				</div>
+
+				<div class="bg-background rounded-lg p-8 shadow-sm border border-primary relative">
+					<div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+						<span class="bg-primary text-primary-foreground text-sm font-medium px-3 py-1 rounded-full">Most Popular</span>
+					</div>
+					<div class="text-center mb-6">
+						<h3 class="text-2xl font-bold mb-2">Standard</h3>
+						<div class="text-3xl font-bold text-primary mb-2">$55<span class="text-lg text-muted-foreground">/visit</span></div>
+						<p class="text-muted-foreground">Great for most homeowners</p>
+					</div>
+					<ul class="space-y-3 mb-6">
+						<li class="flex items-center gap-3">
+							<svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+							<span>Everything in Basic</span>
+						</li>
+						<li class="flex items-center gap-3">
+							<svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+							<span>Detailed edging</span>
+						</li>
+						<li class="flex items-center gap-3">
+							<svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+							<span>Trimming services</span>
+						</li>
+						<li class="flex items-center gap-3">
+							<svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+							<span>Priority scheduling</span>
+						</li>
+					</ul>
+					<a
+						href="tel:6163714651"
+						class="w-full inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-primary text-primary-foreground hover:bg-primary/90 h-11"
+					>
+						Call for Quote
+					</a>
+				</div>
+
+				<div class="bg-background rounded-lg p-8 shadow-sm border">
+					<div class="text-center mb-6">
+						<h3 class="text-2xl font-bold mb-2">Premium</h3>
+						<div class="text-3xl font-bold text-primary mb-2">$75<span class="text-lg text-muted-foreground">/visit</span></div>
+						<p class="text-muted-foreground">Complete lawn care solution</p>
+					</div>
+					<ul class="space-y-3 mb-6">
+						<li class="flex items-center gap-3">
+							<svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+							<span>Everything in Standard</span>
+						</li>
+						<li class="flex items-center gap-3">
+							<svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+							<span>Fertilization included</span>
+						</li>
+						<li class="flex items-center gap-3">
+							<svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+							<span>Weed control</span>
+						</li>
+						<li class="flex items-center gap-3">
+							<svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+							<span>Monthly service reports</span>
+						</li>
+					</ul>
+					<a
+						href="tel:6163714651"
+						class="w-full inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-primary text-primary-foreground hover:bg-primary/90 h-11"
+					>
+						Call for Quote
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Call to Action -->
+	<section class="py-16 bg-primary text-primary-foreground">
+		<div class="container mx-auto px-4 text-center">
+			<h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
+			<p class="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
+				Contact us today for a free consultation and customized quote for your lawn mowing needs.
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<a
+					href="tel:6163714651"
+					class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-background text-foreground hover:bg-accent hover:text-accent-foreground h-11 px-8 py-6 text-lg"
+				>
+					Call: (616) 371-4651
+				</a>
+				<a
+					href="/"
+					class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-primary-foreground/20 hover:bg-primary-foreground/10 h-11 px-8 py-6 text-lg"
+				>
+					Back to Home
+				</a>
+			</div>
+		</div>
+	</section>
+</MainLayout>
