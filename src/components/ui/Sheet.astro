@@ -1,0 +1,113 @@
+---
+// Component Imports
+import { cn } from '../../lib/utils.ts';
+
+export interface Props {
+	class?: string;
+	side?: 'top' | 'right' | 'bottom' | 'left';
+	children: any;
+}
+
+const { class: className, side = 'right', children } = Astro.props;
+---
+
+<div
+	class={cn(
+		"fixed inset-0 z-50 flex",
+		{
+			"justify-start": side === 'left',
+			"justify-end": side === 'right',
+			"items-start": side === 'top',
+			"items-end": side === 'bottom',
+		},
+		className
+	)}
+	id="sheet-overlay"
+>
+	<div
+		class="fixed inset-0 bg-black/80 backdrop-blur-sm opacity-100"
+		id="sheet-backdrop"
+	></div>
+
+	<div
+		class={cn(
+			"relative flex h-full w-full max-w-xs flex-col bg-background shadow-lg",
+			{
+				"ml-auto": side === 'right',
+				"mr-auto": side === 'left',
+			}
+		)}
+		id="sheet-content"
+	>
+		<div class="flex items-center justify-between p-4 border-b">
+			<span class="text-lg font-semibold">Menu</span>
+			<button
+				id="close-sheet"
+				class="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+			>
+				<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+				</svg>
+				<span class="sr-only">Close</span>
+			</button>
+		</div>
+		<div class="flex-1 overflow-auto py-4">
+			<slot />
+		</div>
+	</div>
+</div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const sheetOverlay = document.getElementById('sheet-overlay');
+		const sheetBackdrop = document.getElementById('sheet-backdrop');
+		const closeButton = document.getElementById('close-sheet');
+
+		function closeSheet() {
+			if (sheetOverlay) {
+				sheetOverlay.classList.add('hidden');
+				document.body.style.overflow = '';
+			}
+		}
+
+		function openSheet() {
+			if (sheetOverlay) {
+				sheetOverlay.classList.remove('hidden');
+				document.body.style.overflow = 'hidden';
+			}
+		}
+
+		// Close sheet when clicking backdrop
+		if (sheetBackdrop) {
+			sheetBackdrop.addEventListener('click', closeSheet);
+		}
+
+		// Close sheet when clicking close button
+		if (closeButton) {
+			closeButton.addEventListener('click', closeSheet);
+		}
+
+		// Close sheet on escape key
+		document.addEventListener('keydown', function(e) {
+			if (e.key === 'Escape' && !sheetOverlay?.classList.contains('hidden')) {
+				closeSheet();
+			}
+		});
+
+		// Close sheet when clicking on menu links
+		const menuLinks = sheetOverlay?.querySelectorAll('a');
+		menuLinks?.forEach(link => {
+			link.addEventListener('click', closeSheet);
+		});
+
+		// Make the sheet functions available globally for the menu button
+		(window as any).openSheet = openSheet;
+		(window as any).closeSheet = closeSheet;
+	});
+</script>
+
+<style>
+	#sheet-overlay.hidden {
+		@apply hidden;
+	}
+</style>
