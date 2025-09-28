@@ -155,4 +155,25 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  /* Mobile-specific button improvements */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+
+  /* Ensure buttons are properly sized on mobile */
+  @media (max-width: 640px) {
+    button, a[role="button"], .btn-primary, [class*="inline-flex"][class*="justify-center"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    /* Improve tap targets for radio button labels */
+    input[type="radio"] + label {
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }

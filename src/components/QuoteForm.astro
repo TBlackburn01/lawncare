@@ -20,7 +20,7 @@ const { class: className } = Astro.props;
 				<!-- Service Selection -->
 				<div>
 					<label for="service" class="block text-sm font-medium mb-3">Select Service</label>
-					<div class="grid md:grid-cols-2 gap-4">
+					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 						<div class="relative">
 							<input
 								type="radio"
@@ -32,14 +32,14 @@ const { class: className } = Astro.props;
 							/>
 							<label
 								for="lawn-mowing"
-								class="flex items-center justify-center p-4 border-2 border-muted rounded-lg cursor-pointer hover:border-primary/50 peer-checked:border-primary peer-checked:bg-primary/5 transition-all"
+								class="flex items-center justify-center p-4 sm:p-6 border-2 border-muted rounded-lg cursor-pointer hover:border-primary/50 peer-checked:border-primary peer-checked:bg-primary/5 transition-all min-h-[120px] sm:min-h-[140px] touch-manipulation"
 							>
 								<div class="text-center">
 									<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
 										<img src="/largeFert.webp" alt="Lawn Mower" class="w-6 h-6" />
 									</div>
-									<div class="font-semibold">Lawn Mowing</div>
-									<div class="text-sm text-muted-foreground">Professional mowing & edging</div>
+									<div class="font-semibold text-base sm:text-lg">Lawn Mowing</div>
+									<div class="text-sm text-muted-foreground mt-1">Professional mowing & edging</div>
 								</div>
 							</label>
 						</div>
@@ -55,14 +55,14 @@ const { class: className } = Astro.props;
 							/>
 							<label
 								for="fertilizer"
-								class="flex items-center justify-center p-4 border-2 border-muted rounded-lg cursor-pointer hover:border-primary/50 peer-checked:border-primary peer-checked:bg-primary/5 transition-all"
+								class="flex items-center justify-center p-4 sm:p-6 border-2 border-muted rounded-lg cursor-pointer hover:border-primary/50 peer-checked:border-primary peer-checked:bg-primary/5 transition-all min-h-[120px] sm:min-h-[140px] touch-manipulation"
 							>
 								<div class="text-center">
 									<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
 										<img src="/360_F_1558613182_00BMPcg5HipVvhgLdQ9urARNl3huKHrF.webp" alt="Fertilizer" class="w-6 h-6" />
 									</div>
-									<div class="font-semibold">Fertilizer</div>
-									<div class="text-sm text-muted-foreground">Custom nutrition programs</div>
+									<div class="font-semibold text-base sm:text-lg">Fertilizer</div>
+									<div class="text-sm text-muted-foreground mt-1">Custom nutrition programs</div>
 								</div>
 							</label>
 						</div>
@@ -111,7 +111,7 @@ const { class: className } = Astro.props;
 				<!-- Submit Button -->
 				<button
 					type="submit"
-					class="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 rounded-lg font-semibold text-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+					class="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 sm:py-5 rounded-lg font-semibold text-lg sm:text-xl transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[56px] sm:min-h-[60px] touch-manipulation shadow-lg"
 				>
 					Get My Free Quote
 				</button>
