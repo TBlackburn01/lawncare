@@ -132,5 +132,36 @@ const { content } = Astro.props;
 				</div>
 			</div>
 		</footer>
+
+		<script>
+			// Smooth scrolling functionality for quote form
+			document.addEventListener('DOMContentLoaded', function() {
+				// Handle smooth scrolling for anchor links
+				document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+					anchor.addEventListener('click', function (e) {
+						e.preventDefault();
+						const targetId = this.getAttribute('href').substring(1);
+						const targetElement = document.getElementById(targetId);
+
+						if (targetElement) {
+							targetElement.scrollIntoView({
+								behavior: 'smooth',
+								block: 'start'
+							});
+						}
+					});
+				});
+
+				// Handle form submission silently
+				const form = document.getElementById('quote-form-element');
+				if (form) {
+					form.addEventListener('submit', function(e) {
+						e.preventDefault();
+						// Silently handle form submission (no action as requested)
+						console.log('Quote form submitted silently');
+					});
+				}
+			});
+		</script>
 	</body>
 </html>

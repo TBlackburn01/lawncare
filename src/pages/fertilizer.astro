@@ -1,6 +1,7 @@
 ---
 // Component Imports
 import MainLayout from '../layouts/main.astro';
+import QuoteForm from '../components/QuoteForm.astro';
 
 const pageTitle = "Professional Fertilizer Services | Best Lawn Care";
 ---
@@ -31,7 +32,7 @@ const pageTitle = "Professional Fertilizer Services | Best Lawn Care";
 							Call Now: (616) 371-4651
 						</a>
 						<a
-							href="/#services"
+							href="#quote-form"
 							class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input hover:bg-accent hover:text-accent-foreground h-11 px-8 py-6 text-lg"
 						>
 							Get Quote
@@ -336,4 +337,7 @@ const pageTitle = "Professional Fertilizer Services | Best Lawn Care";
 			</div>
 		</div>
 	</section>
+
+	<!-- Quote Form -->
+	<QuoteForm client:load />
 </MainLayout>

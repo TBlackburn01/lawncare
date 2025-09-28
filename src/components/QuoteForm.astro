@@ -1,0 +1,147 @@
+---
+export interface Props {
+	class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<section id="quote-form" class={`py-16 ${className || ''}`}>
+	<div class="container mx-auto px-4 max-w-2xl">
+		<div class="bg-background rounded-lg p-8 shadow-lg border">
+			<div class="text-center mb-8">
+				<h2 class="text-3xl font-bold mb-4">Get Your Free Quote</h2>
+				<p class="text-muted-foreground">
+					Fill out the form below and we'll get back to you with a customized quote for your lawn care needs.
+				</p>
+			</div>
+
+			<form id="quote-form-element" class="space-y-6">
+				<!-- Service Selection -->
+				<div>
+					<label for="service" class="block text-sm font-medium mb-3">Select Service</label>
+					<div class="grid md:grid-cols-2 gap-4">
+						<div class="relative">
+							<input
+								type="radio"
+								id="lawn-mowing"
+								name="service"
+								value="lawn-mowing"
+								class="peer sr-only"
+								required
+							/>
+							<label
+								for="lawn-mowing"
+								class="flex items-center justify-center p-4 border-2 border-muted rounded-lg cursor-pointer hover:border-primary/50 peer-checked:border-primary peer-checked:bg-primary/5 transition-all"
+							>
+								<div class="text-center">
+									<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+										<img src="/360_F_892799299_9vorYjo67KfCpq2hcc6AjZjMo2lYFlgQ.webp" alt="Lawn Mower" class="w-6 h-6" />
+									</div>
+									<div class="font-semibold">Lawn Mowing</div>
+									<div class="text-sm text-muted-foreground">Professional mowing & edging</div>
+								</div>
+							</label>
+						</div>
+
+						<div class="relative">
+							<input
+								type="radio"
+								id="fertilizer"
+								name="service"
+								value="fertilizer"
+								class="peer sr-only"
+								required
+							/>
+							<label
+								for="fertilizer"
+								class="flex items-center justify-center p-4 border-2 border-muted rounded-lg cursor-pointer hover:border-primary/50 peer-checked:border-primary peer-checked:bg-primary/5 transition-all"
+							>
+								<div class="text-center">
+									<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+										<img src="/360_F_1558613182_00BMPcg5HipVvhgLdQ9urARNl3huKHrF.webp" alt="Fertilizer" class="w-6 h-6" />
+									</div>
+									<div class="font-semibold">Fertilizer</div>
+									<div class="text-sm text-muted-foreground">Custom nutrition programs</div>
+								</div>
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<!-- Name Field -->
+				<div>
+					<label for="name" class="block text-sm font-medium mb-2">Full Name</label>
+					<input
+						type="text"
+						id="name"
+						name="name"
+						required
+						class="w-full px-4 py-3 border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+						placeholder="Enter your full name"
+					/>
+				</div>
+
+				<!-- Email Field -->
+				<div>
+					<label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+					<input
+						type="email"
+						id="email"
+						name="email"
+						required
+						class="w-full px-4 py-3 border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+						placeholder="Enter your email address"
+					/>
+				</div>
+
+				<!-- Address Field -->
+				<div>
+					<label for="address" class="block text-sm font-medium mb-2">Service Address</label>
+					<input
+						type="text"
+						id="address"
+						name="address"
+						required
+						class="w-full px-4 py-3 border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+						placeholder="Enter your service address"
+					/>
+				</div>
+
+				<!-- Submit Button -->
+				<button
+					type="submit"
+					class="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 rounded-lg font-semibold text-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+				>
+					Get My Free Quote
+				</button>
+			</form>
+		</div>
+	</div>
+</section>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const form = document.getElementById('quote-form-element') as HTMLFormElement;
+
+		if (form) {
+			form.addEventListener('submit', function(e) {
+				e.preventDefault();
+				// Silently handle form submission (no action as requested)
+				console.log('Form submitted silently');
+			});
+		}
+	});
+</script>
+
+<style>
+	/* Custom radio button styling */
+	input[type="radio"] + label {
+		transition: all 0.2s ease;
+	}
+
+	input[type="radio"]:checked + label {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	}
+</style>
