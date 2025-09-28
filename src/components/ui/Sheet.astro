@@ -12,31 +12,16 @@ const { class: className, side = 'right', children } = Astro.props;
 ---
 
 <div
-	class={cn(
-		"fixed inset-0 z-50 flex",
-		{
-			"justify-start": side === 'left',
-			"justify-end": side === 'right',
-			"items-start": side === 'top',
-			"items-end": side === 'bottom',
-		},
-		className
-	)}
+	class="fixed inset-0 z-50 flex justify-end hidden"
 	id="sheet-overlay"
 >
 	<div
-		class="fixed inset-0 bg-black/80 backdrop-blur-sm opacity-100"
+		class="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity duration-300"
 		id="sheet-backdrop"
 	></div>
 
 	<div
-		class={cn(
-			"relative flex h-full w-full max-w-xs flex-col bg-background shadow-lg",
-			{
-				"ml-auto": side === 'right',
-				"mr-auto": side === 'left',
-			}
-		)}
+		class="relative flex h-full w-full max-w-xs flex-col bg-background shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out"
 		id="sheet-content"
 	>
 		<div class="flex items-center justify-between p-4 border-b">
@@ -61,6 +46,7 @@ const { class: className, side = 'right', children } = Astro.props;
 	document.addEventListener('DOMContentLoaded', function() {
 		const sheetOverlay = document.getElementById('sheet-overlay');
 		const sheetBackdrop = document.getElementById('sheet-backdrop');
+		const sheetContent = document.getElementById('sheet-content');
 		const closeButton = document.getElementById('close-sheet');
 
 		function closeSheet() {
@@ -95,10 +81,13 @@ const { class: className, side = 'right', children } = Astro.props;
 		});
 
 		// Close sheet when clicking on menu links
-		const menuLinks = sheetOverlay?.querySelectorAll('a');
-		menuLinks?.forEach(link => {
-			link.addEventListener('click', closeSheet);
-		});
+		// Add event listener after a short delay to ensure content is rendered
+		setTimeout(() => {
+			const menuLinks = sheetOverlay?.querySelectorAll('a');
+			menuLinks?.forEach(link => {
+				link.addEventListener('click', closeSheet);
+			});
+		}, 100);
 
 		// Make the sheet functions available globally for the menu button
 		(window as any).openSheet = openSheet;
